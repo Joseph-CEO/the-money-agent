@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Setup Guide - No Coding Required!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        
+        .big-promise {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .step-container {
+            margin: 40px 0;
+            border-left: 5px solid #667eea;
+            padding-left: 30px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .step-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .step-time {
+            color: #48bb78;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .step-description {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        .instruction {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #4299e1;
+        }
+        
+        .instruction-step {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .instruction-step:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .website-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        
+        .website-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .copy-box {
+            background: #2d3748;
+            color: #68d391;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            position: relative;
+            overflow-x: auto;
+        }
+        
+        .copy-text {
+            color: #a0aec0;
+            font-size: 0.9em;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning-box strong {
+            color: #856404;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .visual-placeholder {
+            background: linear-gradient(135deg, #e0e7ff 0%, #cfd9ff 100%);
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            color: #667eea;
+            font-style: italic;
+        }
+        
+        .checklist {
+            background: #f0fff4;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist-item {
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 3px solid #48bb78;
+            padding-left: 15px;
+        }
+        
+        .cost-tag {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .cost-tag.paid {
+            background: #f6ad55;
+        }
+        
+        .timeline {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .timeline-title {
+            font-size: 1.5em;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .timeline-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 5px solid #48bb78;
+        }
+        
+        .timeline-week {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .timeline-money {
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .help-section {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .step-title {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Visual Setup Guide</h1>
+        <p class="subtitle">No Coding Required! Follow Along Step-by-Step</p>
+        
+        <div class="big-promise">
+            ✨ In 30 minutes, you'll have an AI working for you 24/7, earning money while you sleep! ✨
+        </div>
+        
+        <!-- Overview -->
+        <div class="instruction">
+            <h3 style="color: #667eea; margin-bottom: 15px;">📋 What You'll Do Today:</h3>
+            <div class="instruction-step">Get 3 free accounts (15 minutes)</div>
+            <div class="instruction-step">Deploy to Heroku (10 minutes)</div>
+            <div class="instruction-step">Turn it on and start earning! (5 minutes)</div>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-title">💰 Your Money Timeline</div>
+            <div class="timeline-item">
+                <span class="timeline-week">Week 1:</span> Setup complete, agent learning<br>
+                <span class="timeline-money">$0</span> (but posts are going out!)
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-week">Week 2:</span> First clicks coming in<br>
+                <span class="timeline-money">$20-50</span> first sale! 🎉
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-week">Month 1:</span> Agent optimized<br>
+                <span class="timeline-money">$100-300</span> regular income
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-week">Month 3:</span> Fully scaled<br>
+                <span class="timeline-money">$800-1,200</span> passive income!
+            </div>
+            <div class="timeline-item" style="border-left-color: #ffd700; background: #fffbea;">
+                <span class="timeline-week">Month 4+:</span> Goal achieved!<br>
+                <span class="timeline-money" style="color: #d69e2e;">$1,200+</span> ($10/hour) 🏆
+            </div>
+        </div>
+        
+        <!-- Step 1: Claude API -->
+        <div class="step-container">
+            <div class="step-number">1</div>
+            <div class="step-title">Get Claude AI Key</div>
+            <div class="step-time">⏱️ 5 minutes</div>
+            <div class="cost-tag paid">$5-20/month</div>
+            
+            <div class="step-description">
+                This is the "brain" that writes your social media posts automatically.
+            </div>
+            
+            <a href="https://console.anthropic.com/" target="_blank" class="website-button">
+                🌐 Open Anthropic Console
+            </a>
+            
+            <div class="instruction">
+                <div class="instruction-step">Click "Sign Up" in top right</div>
+                <div class="instruction-step">Enter your email and create password</div>
+                <div class="instruction-step">Verify your email (check inbox)</div>
+                <div class="instruction-step">Click "API Keys" in left menu</div>
+                <div class="instruction-step">Click "Create Key" button</div>
+                <div class="instruction-step">Give it a name like "Commerce Agent"</div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ IMPORTANT:</strong> Copy the key that appears! It looks like this:
+            </div>
+            
+            <div class="copy-box">
+                <div class="copy-text">Your key will look like:</div>
+                sk-ant-api03-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            </div>
+            
+            <div class="instruction">
+                <div class="instruction-step">Copy it to a notepad or notes app</div>
+                <div class="instruction-step">You'll need this later!</div>
+            </div>
+            
+            <div class="visual-placeholder">
+                📸 You'll see a screen with "API Keys" and a big "Create Key" button
+            </div>
+        </div>
+        
+        <!-- Step 2: Telegram Bot -->
+        <div class="step-container">
+            <div class="step-number">2</div>
+            <div class="step-title">Create Telegram Bot</div>
+            <div class="step-time">⏱️ 5 minutes</div>
+            <div class="cost-tag">FREE Forever!</div>
+            
+            <div class="step-description">
+                This is where your deals will be posted. Your audience will follow this channel.
+            </div>
+            
+            <div class="instruction">
+                <strong>On your phone or computer:</strong>
+                <div class="instruction-step">Open Telegram app</div>
+                <div class="instruction-step">Search for: <strong>@BotFather</strong></div>
+                <div class="instruction-step">Click "Start" at the bottom</div>
+                <div class="instruction-step">Send this message: <code>/newbot</code></div>
+                <div class="instruction-step">BotFather will ask for a name - type: <strong>My Deals Bot</strong></div>
+                <div class="instruction-step">BotFather will ask for a username - type: <strong>mydealsbot123</strong> (must be unique)</div>
+            </div>
+            
+            <div class="success-box">
+                <strong>✅ Success!</strong> BotFather will send you a token. Copy it!
+            </div>
+            
+            <div class="copy-box">
+                <div class="copy-text">Token looks like:</div>
+                123456789:ABCdefGHIjklMNOpqrsTUVwxyz-123456789
+            </div>
+            
+            <div class="instruction">
+                <strong>Now create a channel:</strong>
+                <div class="instruction-step">Click "New Channel" in Telegram</div>
+                <div class="instruction-step">Name it: <strong>Hot Deals Daily</strong></div>
+                <div class="instruction-step">Make it <strong>Public</strong></div>
+                <div class="instruction-step">Set username: <strong>@myhotdeals123</strong></div>
+                <div class="instruction-step">Click channel name → <strong>Administrators</strong> → <strong>Add Admin</strong></div>
+                <div class="instruction-step">Search for your bot: <strong>@mydealsbot123</strong></div>
+                <div class="instruction-step">Give it permission to <strong>Post Messages</strong></div>
+            </div>
+            
+            <div class="visual-placeholder">
+                📸 BotFather chat showing your token, and Telegram channel settings screen
+            </div>
+            
+            <div class="checklist">
+                <strong>Write these down:</strong>
+                <div class="checklist-item">✏️ Bot Token: 123456789:ABC...</div>
+                <div class="checklist-item">✏️ Channel Username: @myhotdeals123</div>
+            </div>
+        </div>
+        
+        <!-- Step 3: Shopify Partner -->
+        <div class="step-container">
+            <div class="step-number">3</div>
+            <div class="step-title">Join Shopify Partners</div>
+            <div class="step-time">⏱️ 5 minutes</div>
+            <div class="cost-tag">FREE + Earn $58-$2,000/sale!</div>
+            
+            <div class="step-description">
+                This is how you make money! Every time someone signs up for Shopify through your link, you earn commission.
+            </div>
+            
+            <a href="https://www.shopify.com/partners" target="_blank" class="website-button">
+                🌐 Open Shopify Partners
+            </a>
+            
+            <div class="instruction">
+                <div class="instruction-step">Click "Join Now" (top right)</div>
+                <div class="instruction-step">Enter your email</div>
+                <div class="instruction-step">Create password</div>
+                <div class="instruction-step">Fill out business info (select "Individual" if you don't have a company)</div>
+                <div class="instruction-step">Verify your email</div>
+                <div class="instruction-step">Login to partners dashboard</div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Find Your Partner ID:</strong>
+            </div>
+            
+            <div class="instruction">
+                <div class="instruction-step">Look at the URL in your browser</div>
+                <div class="instruction-step">It looks like: partners.shopify.com/<strong>123456</strong>/home</div>
+                <div class="instruction-step">The number (123456) is your Partner ID</div>
+                <div class="instruction-step">Write it down!</div>
+            </div>
+            
+            <div class="visual-placeholder">
+                📸 Shopify Partners dashboard with URL showing Partner ID
+            </div>
+        </div>
+        
+        <!-- Step 4: Deploy to Heroku -->
+        <div class="step-container">
+            <div class="step-number">4</div>
+            <div class="step-title">Deploy to Heroku</div>
+            <div class="step-time">⏱️ 10 minutes</div>
+            <div class="cost-tag paid">$7/month</div>
+            
+            <div class="step-description">
+                This puts your agent in the cloud where it runs 24/7 automatically.
+            </div>
+            
+            <a href="https://www.heroku.com/" target="_blank" class="website-button">
+                🌐 Open Heroku
+            </a>
+            
+            <div class="instruction">
+                <strong>Create Account:</strong>
+                <div class="instruction-step">Click "Sign Up"</div>
+                <div class="instruction-step">Enter email and password</div>
+                <div class="instruction-step">Verify email</div>
+                <div class="instruction-step">Login</div>
+            </div>
+            
+            <div class="instruction">
+                <strong>Create New App:</strong>
+                <div class="instruction-step">Click "New" (top right) → "Create new app"</div>
+                <div class="instruction-step">Name: <strong>my-commerce-agent</strong></div>
+                <div class="instruction-step">Region: United States</div>
+                <div class="instruction-step">Click "Create app"</div>
+            </div>
+            
+            <div class="visual-placeholder">
+                📸 Heroku dashboard with "Create new app" button highlighted
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ CRITICAL STEP - Upload Your Files:</strong><br>
+                You need to upload all the files I gave you. Here's the easiest way:
+            </div>
+            
+            <div class="instruction">
+                <strong>Method 1: Use GitHub (Easier):</strong>
+                <div class="instruction-step">Go to <a href="https://github.com" target="_blank">github.com</a></div>
+                <div class="instruction-step">Create free account</div>
+                <div class="instruction-step">Click "+" → "New repository"</div>
+                <div class="instruction-step">Name: <strong>commerce-agent</strong></div>
+                <div class="instruction-step">Make it Public</div>
+                <div class="instruction-step">Click "uploading an existing file"</div>
+                <div class="instruction-step">Drag ALL my files into the browser</div>
+                <div class="instruction-step">Click "Commit changes"</div>
+            </div>
+            
+            <div class="instruction">
+                <strong>Connect GitHub to Heroku:</strong>
+                <div class="instruction-step">Back in Heroku, click "Deploy" tab</div>
+                <div class="instruction-step">Click "GitHub" under deployment method</div>
+                <div class="instruction-step">Connect your GitHub account</div>
+                <div class="instruction-step">Search: <strong>commerce-agent</strong></div>
+                <div class="instruction-step">Click "Connect"</div>
+                <div class="instruction-step">Scroll down, click "Deploy Branch"</div>
+            </div>
+        </div>
+        
+        <!-- Step 5: Configure -->
+        <div class="step-container">
+            <div class="step-number">5</div>
+            <div class="step-title">Add Your API Keys</div>
+            <div class="step-time">⏱️ 5 minutes</div>
+            
+            <div class="step-description">
+                This is THE MOST IMPORTANT STEP! Connect everything together.
+            </div>
+            
+            <div class="instruction">
+                <div class="instruction-step">In Heroku, click "Settings" tab</div>
+                <div class="instruction-step">Click "Reveal Config Vars"</div>
+                <div class="instruction-step">You'll see KEY and VALUE boxes</div>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Add each one EXACTLY like this:</strong>
+            </div>
+            
+            <table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
+                <thead style="background: #667eea; color: white;">
+                    <tr>
+                        <th style="padding: 10px; text-align: left;">KEY</th>
+                        <th style="padding: 10px; text-align: left;">VALUE (Use yours!)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #f7fafc;">
+                        <td style="padding: 10px; font-family: monospace;">ANTHROPIC_API_KEY</td>
+                        <td style="padding: 10px; font-family: monospace;">sk-ant-xxx... (from Step 1)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; font-family: monospace;">TELEGRAM_BOT_TOKEN</td>
+                        <td style="padding: 10px; font-family: monospace;">123456789:ABC... (from Step 2)</td>
+                    </tr>
+                    <tr style="background: #f7fafc;">
+                        <td style="padding: 10px; font-family: monospace;">TELEGRAM_CHANNEL_ID</td>
+                        <td style="padding: 10px; font-family: monospace;">@myhotdeals123 (from Step 2)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; font-family: monospace;">SHOPIFY_PARTNER_ID</td>
+                        <td style="padding: 10px; font-family: monospace;">123456 (from Step 3)</td>
+                    </tr>
+                    <tr style="background: #f7fafc;">
+                        <td style="padding: 10px; font-family: monospace;">SITE_URL</td>
+                        <td style="padding: 10px; font-family: monospace;">https://mydeals.com</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; font-family: monospace;">POSTS_PER_HOUR</td>
+                        <td style="padding: 10px; font-family: monospace;">2</td>
+                    </tr>
+                    <tr style="background: #f7fafc;">
+                        <td style="padding: 10px; font-family: monospace;">MIN_COMMISSION_RATE</td>
+                        <td style="padding: 10px; font-family: monospace;">5.0</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="instruction">
+                <div class="instruction-step">Type the KEY in left box</div>
+                <div class="instruction-step">Type your VALUE in right box</div>
+                <div class="instruction-step">Click "Add"</div>
+                <div class="instruction-step">Repeat for each row above</div>
+            </div>
+            
+            <div class="visual-placeholder">
+                📸 Heroku Settings showing Config Vars with KEY and VALUE fields
+            </div>
+        </div>
+        
+        <!-- Step 6: Turn It On -->
+        <div class="step-container">
+            <div class="step-number">6</div>
+            <div class="step-title">Turn On Your Agent!</div>
+            <div class="step-time">⏱️ 2 minutes</div>
+            
+            <div class="step-description">
+                The final step - flip the switch and watch it go!
+            </div>
+            
+            <div class="instruction">
+                <div class="instruction-step">Click "Resources" tab in Heroku</div>
+                <div class="instruction-step">Under "Free Dynos" find "worker"</div>
+                <div class="instruction-step">Click the pencil icon ✏️</div>
+                <div class="instruction-step">Toggle switch to ON 🟢</div>
+                <div class="instruction-step">Click "Confirm"</div>
+            </div>
+            
+            <div class="success-box">
+                <strong style="font-size: 1.5em;">🎉 CONGRATULATIONS! YOUR AGENT IS NOW RUNNING!</strong>
+            </div>
+            
+            <div class="visual-placeholder">
+                📸 Heroku Resources page showing worker dyno toggled ON
+            </div>
+        </div>
+        
+        <!-- Step 7: Verify -->
+        <div class="step-container">
+            <div class="step-number">7</div>
+            <div class="step-title">Check It's Working</div>
+            <div class="step-time">⏱️ 3 minutes</div>
+            
+            <div class="instruction">
+                <div class="instruction-step">In Heroku, click "More" (top right) → "View logs"</div>
+                <div class="instruction-step">Look for green text saying "Cycle completed successfully"</div>
+                <div class="instruction-step">Open your Telegram channel</div>
+                <div class="instruction-step">You should see posts appearing!</div>
+            </div>
+            
+            <div class="success-box">
+                <strong>✅ You'll Know It's Working When:</strong><br>
+                • Heroku logs show "Cycle completed successfully"<br>
+                • Posts appear in your Telegram channel<br>
+                • Posts have #ad at the end<br>
+                • New posts every hour<br>
+            </div>
+        </div>
+        
+        <!-- Troubleshooting -->
+        <div class="help-section">
+            <h3 style="color: #e53e3e; margin-bottom: 15px;">🆘 Help! Something's Wrong</h3>
+            
+            <div style="margin: 15px 0;">
+                <strong>"Invalid API key"</strong><br>
+                Fix: Go to Settings → Config Vars → Check you copied the FULL key (including sk-ant-)
+            </div>
+            
+            <div style="margin: 15px 0;">
+                <strong>"No posts appearing"</strong><br>
+                Fix: Make sure bot is admin in channel and TELEGRAM_CHANNEL_ID has @ symbol
+            </div>
+            
+            <div style="margin: 15px 0;">
+                <strong>"Worker not running"</strong><br>
+                Fix: Resources tab → Toggle worker to ON → Click Confirm
+            </div>
+        </div>
+        
+        <!-- What's Next -->
+        <div class="timeline">
+            <div class="timeline-title">🎯 What Happens Next</div>
+            
+            <div class="timeline-item">
+                <strong>Next Hour:</strong> Your agent will fetch deals and post the first one!
+            </div>
+            
+            <div class="timeline-item">
+                <strong>Next 24 Hours:</strong> 48 posts will go out automatically
+            </div>
+            
+            <div class="timeline-item">
+                <strong>Next Week:</strong> Check Heroku logs daily for errors
+            </div>
+            
+            <div class="timeline-item">
+                <strong>Next 2 Weeks:</strong> First clicks and maybe first sale! 💰
+            </div>
+            
+            <div class="timeline-item">
+                <strong>Next Month:</strong> Regular income flowing in!
+            </div>
+        </div>
+        
+        <!-- Final Success -->
+        <div style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin-top: 40px;">
+            <h2 style="font-size: 2.5em; margin-bottom: 20px;">🎊 YOU DID IT!</h2>
+            <p style="font-size: 1.3em; margin-bottom: 20px;">
+                Your autonomous AI agent is now working for you 24/7!
+            </p>
+            <p style="font-size: 1.1em; opacity: 0.9;">
+                • No more manual work<br>
+                • AI finds the best deals<br>
+                • Posts automatically<br>
+                • You earn money while sleeping 😴💰
+            </p>
+            <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+                Expected to reach $10/hour goal in 3-4 months
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; text-align: center; padding: 30px; background: #f7fafc; border-radius: 15px;">
+            <h3 style="color: #667eea; margin-bottom: 15px;">📚 Need More Help?</h3>
+            <p style="color: #666; margin-bottom: 20px;">Check these guides for more details:</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <span style="background: white; padding: 10px 20px; border-radius: 8px; border: 2px solid #e2e8f0;">NO_CODE_GUIDE.md</span>
+                <span style="background: white; padding: 10px 20px; border-radius: 8px; border: 2px solid #e2e8f0;">QUICKSTART.md</span>
+                <span style="background: white; padding: 10px 20px; border-radius: 8px; border: 2px solid #e2e8f0;">DEPLOYMENT_GUIDE.md</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
