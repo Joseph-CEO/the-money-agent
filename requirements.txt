@@ -1,0 +1,56 @@
+# Autonomous Commerce AI Agent - Python Dependencies
+
+# Core async and scheduling
+schedule==1.2.0
+aiohttp==3.9.1
+asyncio==3.4.3
+
+# Affiliate network integrations
+paapi5-python-sdk==1.5.0  # Amazon Product Advertising API
+boto3==1.34.19  # AWS SDK for Amazon API signing
+requests==2.31.0
+
+# Social media APIs
+tweepy==4.14.0  # Twitter/X API
+python-telegram-bot==20.7
+
+# Web scraping (backup/monitoring)
+beautifulsoup4==4.12.2
+selenium==4.16.0
+
+# Content generation (Claude API)
+anthropic==0.25.0
+
+# Data handling
+pandas==2.1.4
+python-dotenv==1.0.0
+
+# Analytics
+google-analytics-admin==0.22.0
+mixpanel==4.10.1
+
+# Monitoring and alerting
+sentry-sdk==1.39.2
+slack-sdk==3.26.2
+
+# Security
+cryptography==41.0.7
+pyopenssl==23.3.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.23.2
+pytest-mock==3.12.0
+
+# Deployment
+gunicorn==21.2.0
+supervisor==4.2.5
+
+# Database (for storing metrics)
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+colorlog==6.8.0
